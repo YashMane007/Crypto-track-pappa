@@ -146,14 +146,8 @@ app.delete('/api/coins/:id', async (req, res) => {
 app.get('/api/inr', async (req, res) => {
     try {
         const results = await executeQuery('SELECT price FROM inr_price WHERE id = 1');
-        console.log('Fetched INR price from database:', results);
-        if (results.length > 0) {
-            const inrPrice = results[0].price;
-            res.json({ inrPrice });
-        } else {
-            console.warn('No INR price found, returning default value');
-            res.json({ inrPrice: 85 });
-        }
+        const inrPrice = results.length ? results[0].price : 85; // Default to 85 if no price found
+        res.json({ inrPrice });
     } catch (error) {
         console.error('Error fetching INR price:', error);
         res.status(500).json({ error: 'Database error' });
