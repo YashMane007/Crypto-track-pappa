@@ -77,8 +77,16 @@ const createTables = async () => {
 
 createTables();
 
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/public/index.html');  // Serve index.html
+// });
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');  // Serve index.html
+});
+
+app.get('/admin', (req, res) => {
+    res.sendFile(__dirname + '/public/admin.html');  // Serve admin.html
 });
 
 app.get('/api/coins', async (req, res) => {
