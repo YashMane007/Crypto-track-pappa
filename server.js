@@ -21,11 +21,11 @@ const pool = mysql.createPool({
     port: process.env.DB_PORT
 });
 
-pool.on('acquire', () => {
+pool.on('acquire', (connection) => {
     console.log('Connection %d acquired', connection.threadId);
 });
 
-pool.on('connection', () => {
+pool.on('connection', (connection) => {
     console.log('New connection established');
 });
 
@@ -33,10 +33,18 @@ pool.on('release', (connection) => {
     console.log('Connection %d released', connection.threadId);
 });
 
+pool.on('error', (err) => {
+    console.error('Unexpected error on idle MySQL client', err);
+    process.exit(-1);
+});
+
 const executeQuery = (query, params = []) => {
     return new Promise((resolve, reject) => {
         pool.query(query, params, (error, results) => {
-            if (error) return reject(error);
+            if (error) {
+                console.error('Database query error:', error);
+                return reject(error);
+            }
             resolve(results);
         });
     });
@@ -163,5 +171,3 @@ app.put('/api/inr', async (req, res) => {
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
-
-
