@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cryptic Price Tracker</title>
+  <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/128px-Bitcoin.svg.png">
+  <link rel="stylesheet" href="https://yashmane007.github.io/Crypto-track-new/public/style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="dark-mode">
+  <button class="dark-mode-btn" onclick="toggleTheme()" title="Toggle dark/light mode"><i class="fas fa-sun"></i></button>
+
+  <div class="container">
+    <h1>Cryptic Price Tracker</h1>
+
+    <div id="totalValueContainer">
+      Total: <span id="totalValue">$0.00 / ₹0.00</span>
+    </div>
+    
+    <div id="totalValueContainer">
+        <div id="inrPriceDisplay"></div>&nbsp&nbsp&nbsp
+      </div>
+
+    <div class="controls-container">
+      <input type="text" id="searchInput" placeholder="Search by coin symbol" oninput="sortAndFilter()" title="Search for a cryptocurrency by its symbol">
+      <div class="spacer-20"></div>
+      <select id="sortSelect" onchange="sortAndFilter()" title="Sort the list of cryptocurrencies">
+        <option>Sort</option>
+        <option value="alphabetical">Alphabetical (A-Z)</option>
+        <option value="alphabeticalDesc">Alphabetical (Z-A)</option>
+        <option value="priceAsc">Price (Low to High)</option>
+        <option value="priceDesc">Price (High to Low)</option>
+      </select>
+      
+    </div>
+    <br>
+    <div id="cryptoPrices"></div>
+  </div>
+
+  <script src="https://yashmane007.github.io/Crypto-track-new/public/index.js"></script>
+  <div><a href="https://yashmane007.github.io/Crypto-track-new/public/admin.html">Admin Panal</a></div>
+</body>
+</html>
