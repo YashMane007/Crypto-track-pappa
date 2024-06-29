@@ -1,5 +1,3 @@
-/* General styles */
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -24,12 +22,10 @@ h1 {
   align-items: center;
 }
 
-input[type="text"],
-input[type="number"],
-select {
+input[type="text"], input[type="number"], select {
   flex: 1;
   padding: 10px;
-  border: 1px solid #ced4da;
+  border: 1px solid #ced4da; /* Light gray border */
   border-radius: 5px;
   font-size: 16px;
 }
@@ -43,12 +39,17 @@ button {
 }
 
 button.add-btn {
-  background-color: #28a745;
+  background-color: #28a745; /* Green button background */
   color: white;
 }
 
-button.edit-btn,
+button.edit-btn {
+  /* background-color: #007bff; Blue button background */
+  color: white;
+}
+
 button.delete-btn {
+  /* background-color: #dc3545; Red button background */
   color: white;
 }
 
@@ -77,7 +78,9 @@ button:hover {
   color: #08f142;
 }
 
-.quantity-value {}
+.quantity-value {
+  /* color: hwb(20 4% 7%); */
+}
 
 .crypto-actions button {
   margin-left: 10px;
@@ -87,7 +90,7 @@ button:hover {
 }
 
 .crypto-actions button:hover {
-  background-color: #cfd2d6;
+  background-color: #cfd2d6; /* Darker gray button background on hover */
 }
 
 .dark-mode-btn {
@@ -119,62 +122,58 @@ button:hover {
 
 /* Dark Mode */
 body.dark-mode {
-  background-color: #212529;
-  color: #ffffff;
+  background-color: #212529; /* Dark background color */
+  color: #ffffff; /* White text color */
 }
 
 .dark-mode .container {
-  background-color: #343a40;
+  background-color: #343a40; /* Dark gray container background */
 }
 
-.dark-mode input[type="text"],
-.dark-mode input[type="number"],
-.dark-mode select {
-  background-color: #495057;
-  color: #ffffff;
+.dark-mode input[type="text"], .dark-mode input[type="number"], .dark-mode select {
+  background-color: #495057; /* Darker gray input background */
+  color: #ffffff; /* White input text color */
 }
 
 .dark-mode .price-detail {
-  background-color: #495057;
+  background-color: #495057; /* Darker gray price detail background */
 }
 
 .dark-mode .price-value {
-  color: #007bff;
+  color: #007bff; /* Blue price value color */
 }
 
 .dark-mode .dark-mode-btn {
-  background-color: #343a40;
-  color: #ffffff;
+  background-color: #343a40; /* Dark gray button background */
+  color: #ffffff; /* White button text color */
 }
 
 /* Light Mode */
 body:not(.dark-mode) {
-  background-color: #ffffff;
-  color: #212529;
+  background-color: #ffffff; /* Light background color */
+  color: #212529; /* Dark text color */
 }
 
 body:not(.dark-mode) .container {
-  background-color: #ffffff;
+  background-color: #ffffff; /* Light gray container background */
 }
 
-body:not(.dark-mode) input[type="text"],
-body:not(.dark-mode) input[type="number"],
-body:not(.dark-mode) select {
-  background-color: #ffffff;
-  color: #495057;
+body:not(.dark-mode) input[type="text"], body:not(.dark-mode) input[type="number"], body:not(.dark-mode) select {
+  background-color: #ffffff; /* White input background */
+  color: #495057; /* Dark gray input text color */
 }
 
 body:not(.dark-mode) .price-detail {
-  background-color: #f8f9fa;
+  background-color: #f8f9fa; /* Light gray price detail background */
 }
 
 body:not(.dark-mode) .price-value {
-  color: #007bff;
+  color: #007bff; /* Blue price value color */
 }
 
 body:not(.dark-mode) .dark-mode-btn {
-  background-color: #f8f9fa;
-  color: #212529;
+  background-color: #f8f9fa; /* Light gray button background */
+  color: #212529; /* Dark button text color */
 }
 
 /* CSS for total value container and total value */
@@ -182,6 +181,7 @@ body:not(.dark-mode) .dark-mode-btn {
   margin-top: 20px;
   font-size: 18px;
   text-align: center;
+  /* color: #09ff00; */
 }
 
 #totalValue {
@@ -189,7 +189,7 @@ body:not(.dark-mode) .dark-mode-btn {
 }
 
 button.update-btn {
-  background-color: #007bff;
+  background-color: #007bff; /* Blue button background */
   color: white;
   margin-left: 10px;
 }
@@ -205,26 +205,10 @@ button.update-btn {
 .inr-container {
   display: flex;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 20px; /* Added margin for space */
 }
 
 .inr-container span {
   margin-right: 10px;
   font-size: 1em;
-}
-
-/* Responsive Design */
-@media only screen and (max-width: 768px) {
-  .container {
-    padding: 10px;
-  }
-  
-  .controls-container {
-    flex-direction: column;
-  }
-  
-  .dark-mode-btn {
-    font-size: 18px;
-    padding: 8px;
-  }
 }
