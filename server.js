@@ -56,7 +56,7 @@ const createTables = async () => {
             CREATE TABLE IF NOT EXISTS coins (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 symbol VARCHAR(10) NOT NULL,
-                quantity INT NOT NULL DEFAULT 0
+                quantity DECIMAL(40, 10) NOT NULL DEFAULT 0
             )
         `;
         await executeQuery(createCoinsTableQuery);
